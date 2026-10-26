@@ -7,7 +7,7 @@ from model import normalize_record
 
 
 MODEL_PATH = Path(__file__).with_name("pipeline.bin")
-CLIENT = {
+lead = {
   "lead_source": "paid_ads",
   "industry": "technology",
   "employment_status": "employed",
@@ -21,7 +21,7 @@ CLIENT = {
 with MODEL_PATH.open("rb") as model_file:
     pipeline = pickle.load(model_file)
 
-record = normalize_record(CLIENT)
+record = normalize_record(lead)
 first = float(pipeline.predict_proba([record])[0, 1])
 second = float(pipeline.predict_proba([record])[0, 1])
 
