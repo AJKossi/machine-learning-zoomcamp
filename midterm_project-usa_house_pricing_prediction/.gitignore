@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model artifacts
+models/*.pkl
+
+# OS files
+.DS_Store
